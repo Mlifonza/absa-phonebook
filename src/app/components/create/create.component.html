@@ -1,0 +1,24 @@
+<div class="container" style="text-align: center;">
+    <button type="button" class="btn-close" aria-label="Close" (click)="close(); $event.stopPropagation();"></button>
+    <h3>CREATE A CONTACT</h3>
+    <form>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" [(ngModel)]="name" id="name" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Number</label>
+            <input type="tel" inputmode="tel" class="form-control" [(ngModel)]="number" id="number" [ngModelOptions]="{standalone: true}">
+        </div>
+    </form>
+    <div class="btn btn-save" (click)="save(); $event.stopPropagation();">
+        <button type="button" class="btn btn-dark">
+            save
+            <div *ngIf="openSpinner" class="d-flex justify-content-center spinner">
+                <div id="spinner" class="spinner-border text-warning" role="status">
+                </div>
+            </div>
+        </button>
+    </div>
+    <small *ngIf="message" class="text-danger">{{ message }}</small>
+</div>

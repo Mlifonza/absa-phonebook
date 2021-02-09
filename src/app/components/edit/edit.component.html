@@ -1,0 +1,21 @@
+<div class="container" style="text-align: center;">
+    <button type="button" class="btn-close" aria-label="Close" (click)="close(); $event.stopPropagation();"></button>
+    <h3>EDIT A CONTACT</h3>
+    <form>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" [(ngModel)]="contact.name" 
+            id="name" [ngModelOptions]="{standalone: true}" (blur)="onNameChange()">
+            <small *ngIf="message" class="text-danger">{{ nameMessage }}</small>
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Number</label>
+            <input type="tel" inputmode="tel" class="form-control" [(ngModel)]="contact.number" 
+            id="number" [ngModelOptions]="{standalone: true}">
+            <small *ngIf="message" class="text-danger">{{ numberMessage }}</small>
+        </div>
+    </form>
+    <div class="btn btn-save" (click)="save(); $event.stopPropagation();">
+        <button type="button" class="btn btn-dark" [disabled]="disable()">save</button>
+    </div>
+</div>

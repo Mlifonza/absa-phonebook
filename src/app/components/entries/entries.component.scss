@@ -1,0 +1,51 @@
+.btn-create {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.backdrop {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.create, .edit {
+    position: fixed;
+    margin: auto;
+    width: 30%;
+    top: 30%;
+    left: 30%;
+    z-index: 9;
+    background: honeydew;
+    border-radius: 10px;
+}
+
+.table {
+    width: 60%;
+    margin: auto;
+    margin-top: 5rem;
+}
+
+.icon {
+    width: 40px;
+    height: inherit;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.icon:hover {
+    box-shadow: black 2px 2px 2px;
+    background: rgb(160, 158, 158);
+}
+
+button.btn {
+    width: 150px;
+}
+
+
+
